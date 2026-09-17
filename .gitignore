@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Folders
+out/*/
+
+# TwiBot-20 splits: distributed by the dataset authors, and train.json (239 MB) exceeds GitHub's 100 MB file limit
+data/
+
+#Old files
+main_parametrized.ipynb
