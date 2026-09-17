@@ -194,7 +194,3 @@ The complete discussion is in [`PROJECT.md`](PROJECT.md), section 10.
    patients.* Expert Systems with Applications 287, 128224. **(LEGOLAS)**
 2. Feng, S., Wan, H., Wang, N., Li, J., Luo, M. *TwiBot-20: A Comprehensive
    Twitter Bot Detection Benchmark.* CIKM 2021.
-3. Feng, S. et al. *What Does the Bot Say? Opportunities and Risks of Large
-   Language Models in Social Media Bot Detection.* ACL 2024.
-4. Hegselmann, S. et al. *TabLLM: Few-shot Classification of Tabular Data with
-   Large Language Models.* AISTATS 2023.
