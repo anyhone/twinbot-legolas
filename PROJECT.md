@@ -310,7 +310,36 @@ code that ships.
 A statistic has to clear two bars.
 
 **Bar 1 - it has to separate the classes**, |*d*| >= 0.12. Below that the
-sentence costs tokens the posts need and returns noise.
+sentence costs tokens the posts need and returns noise. Three things about that
+number, since it is a threshold this project chose rather than one it inherited:
+
+- **It is not a convention of the literature.** Cohen's own scale calls 0.2
+  small, 0.5 medium and 0.8 large, so 0.12 sits below even "small". The bar is
+  deliberately permissive, because the question it answers is not "is this
+  effect notable" but "is this sentence worth five to twenty tokens of a
+  512-token budget".
+- **Statistical significance is useless as a filter at this sample size.** The
+  audit population is 3,592 humans and 4,631 bots, and with those numbers
+  |*d*| = 0.044 already reaches p < 0.05 (0.057 reaches p < 0.01). A
+  significance test would admit 12 of the 21 candidates, `post-length spread`
+  (−0.047) and `link share` (−0.045) among them: what makes them significant is
+  the sample size, not the size of the difference.
+- **The value sits at a break in the measured distribution.** Sorted by |*d*|,
+  the candidates fall into a group of nine at 0.118 and above, then a gap of
+  0.021, then a tail that decays quickly - 0.097, 0.076, and nothing else above
+  0.047. The bar is drawn at that break: data-driven, but chosen after seeing
+  the numbers, and a bar at 0.08 would have been equally defensible - it would
+  have admitted one further statistic, `digit share`.
+
+**How much the exact value matters: very little**, and that is worth stating
+rather than hiding. The three largest rejections of the audit (+0.35, +0.26,
++0.21) fail bar 2, not bar 1; the bar was deliberately overridden once, for the
+sharp repetition sentence at +0.118; and group B of `RESULTS.md` measured the
+whole block as worth +0.0004 macro-F1 on the full template, with McNemar finding
+no difference on any seed. Any cut between 0.08 and 0.15 would have produced the
+same template and the same conclusions. What bar 1 really does is keep the tail
+of the candidate list out of the story; the decisions that shaped the block were
+made by bar 2.
 
 **Bar 2 - it has to say something new.** Statistics come in correlated families,
 and a family gets one sentence, not three. Four candidates with a large *d* fail

@@ -1059,6 +1059,20 @@ print(example["text"])
 # 1. **It has to separate the classes**, |*d*| ≥ 0.12. Below that the sentence
 #    is noise: link share (−0.05), type-token ratio (−0.03), mean post length
 #    (−0.03), reply share (+0.04), self-retweets (+0.02) all fail here.
+# 
+#    That threshold is a choice of this project, not a convention: Cohen's scale
+#    calls 0.2 *small*, so 0.12 is below even that. It is deliberately permissive
+#    because the question is not "is this effect notable" but "is this sentence
+#    worth five to twenty tokens of a 512-token budget" - and statistical
+#    significance cannot answer it, since with 3,592 humans and 4,631 bots
+#    |*d*| = 0.044 already gives p < 0.05 and would admit 12 of the 21 candidates.
+#    The value sits at a break in the printed ranking: nine candidates at 0.118
+#    and above, a gap of 0.021, then a tail that decays fast (0.097, 0.076,
+#    nothing else above 0.047). A bar at 0.08 would have been equally defensible,
+#    admitting one more statistic. The exact value matters little in the end: the
+#    three largest rejections below fail bar 2, the bar is overridden once on
+#    purpose, and group B measured the whole block at +0.0004 macro-F1 - any cut
+#    between 0.08 and 0.15 gives the same template.
 # 2. **It has to say something new.** Statistics come in correlated families,
 #    and a family gets one sentence. Three candidates with a large *d* fail
 #    exactly here, and they are the instructive part of the audit:
